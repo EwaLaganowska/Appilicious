@@ -786,6 +786,8 @@ h2 {
 
 .promo .img-box {
   background: url(../img/phone-in-hand.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .sales-points {
@@ -901,4 +903,40 @@ footer a {
   padding: 5em 0;
   background-blend-mode: multiply;
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 725px) {
+  .cta {
+    padding: 10em 0;
+  }
+  .cta::before, .cta::after {
+    content: '';
+    display: block;
+    background: #d31869;
+    position: absolute;
+    width: 100%;
+    border: 1em solid white;
+  }
+  .cta::before {
+    top: 0;
+    bottom: -3em;
+    -webkit-transform: skewX(50deg);
+    -ms-transform: skewX(50deg);
+    transform: skewX(50deg);
+    left: -100%;
+  }
+  .cta::after {
+    top: -3em;
+    bottom: 0;
+    -webkit-transform: skewX(50deg);
+    -ms-transform: skewX(50deg);
+    transform: skewX(50deg);
+    right: -100%;
+  }
+}
+
+.cta .container-cta {
+  width: 50%;
 }
